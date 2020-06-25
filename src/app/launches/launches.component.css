@@ -1,0 +1,91 @@
+#parallax-wrapper {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 65vh;
+    box-sizing: border-box;
+    transform-style: preserve-3d;
+}
+
+#parallax-wrapper::before {
+    content: "";
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 30vh;
+    background-image: url("../../assets/images/backgrounds/launches_starlink_prelaunch.webp");
+    background-position: top;
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+    transform: translateZ(-1px) scale(2);
+}
+
+#small-paragraphs a {
+    font: 16px/24px DINPro-Medium, Arial, Verdana, sans-serif;
+    color: inherit;
+    text-decoration: underline;
+}
+
+#small-paragraphs a:hover,
+#small-paragraphs a:focus {
+    font: inherit;
+    text-decoration: none;
+}
+
+table.regular td {
+    font: 600 12px/18px DINPro-Regular, Arial, Verdana, sans-serif;
+    padding: 25px 5px 15px;
+    vertical-align: text-top;
+    text-align: left;
+    color: #868686;
+    border-bottom: 1pt solid rgba(255, 255, 255, .3);
+}
+
+table.regular td:nth-child(2) {
+    color: #fff;
+}
+
+table.regular th {
+    font: 18px/50px DINPro-Bold, Arial, Verdana, sans-serif;
+    text-align: left;
+    color: #fff;
+    padding: 0 5px;
+    text-transform: uppercase;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+table.regular {
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    table.regular td {
+        font-size: 18px;
+        line-height: 26px;
+    }
+}
+
+#footer {
+    position: relative;
+    height: auto;
+    margin: 0 auto;
+    height: auto;
+    text-align: center;
+    font: 12px/18px DINPro-Bold, Arial, Verdana, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #979797;
+    padding: 10px 0;
+    text-transform: uppercase;
+}
+
+#footer a {
+    font: 12px/24px DINPro-Bold, Arial, Verdana, sans-serif;
+    font-weight: 400;
+    color: #fff;
+}

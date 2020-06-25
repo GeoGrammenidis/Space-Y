@@ -1,0 +1,517 @@
+<main>
+    <div id="parallax-wrapper">
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto">
+                <h1>Dragon</h1>
+                <h3>Sending humans and cargo into space</h3>
+            </div>
+        </div>
+    </div>
+    <div class="regular-wrapper flexing">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col" inViewport [inViewportOptions]="{ threshold: [0] }" (inViewportAction)="counting($event)">
+                    <span class="number">{{counter[0]}}</span>
+                </div>
+                <div class="col">
+                    <span class="number">{{counter[1]}}</span>
+                </div>
+                <div class="col">
+                    <span class="number">{{counter[2]}}</span>
+                </div>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col">
+                    <span class="stats">Total Launches</span>
+                </div>
+                <div class="col">
+                    <span class="stats">Total Landings</span>
+                </div>
+                <div class="col">
+                    <span class="stats">Reflown Rockets</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="regular-wrapper {{classAdded}} background-css flexing" id="dragon-lines">
+        <div class="container">
+            <div class="row justify-content-center justify-content-md-start">
+                <div class="col col-md-6">
+                    <h4 style="text-align:left">
+                        The Dragon spacecraft is capable of carrying up to 7 passengers to and from Earth orbit, and beyond. It is the only spacecraft currently flying that is capable of returning significant amounts of cargo to Earth, and will soon become the first private
+                        spacecraft to take humans to the space station.
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="regular-wrapper background-css {{classAdded}}" id="falcon-heavy" inViewport [inViewportOptions]="{ threshold: 0 }" (inViewportAction)="attaching($event)">
+        <div id="falconCarousel" class="carousel slide headers-left" data-ride="carousel" data-interval="false">
+            <div class="d-none d-md-block">
+                <ol class="carousel-indicators">
+                    <li data-target="#falconCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#falconCarousel" data-slide-to="1"></li>
+                    <li data-target="#falconCarousel" data-slide-to="2"></li>
+                </ol>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="background-css {{classAdded}} flexing" id="carousel-img1">
+                        <div class="container" style="height:50vh">
+                            <div class="row">
+                                <div class="col">
+                                    <h3>Dragon</h3>
+                                    <h2>Overview</h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <table class="data mb-5">
+                                        <tbody>
+                                            <tr>
+                                                <td>HEIGHT</td>
+                                                <td>8.1 m <span>/ 26.7 ft</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>DIAMETER</td>
+                                                <td>4 m <span>/ 13 ft</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>CAPSULE VOLUME</td>
+                                                <td>9.3 m³ <span>/ 328 ft³ </span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>TRUNK VOLUME</td>
+                                                <td>37 m³ <span>/ 1300 ft³ </span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>LAUNCH PAYLOAD MASS</td>
+                                                <td>6,000 kg <span>/ 13,228 lbs</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>RETURN PAYLOAD MASS</td>
+                                                <td>3,000 kg <span>/ 6,614 lbs</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="background-css {{classAdded}} flexing" id="carousel-img2">
+                        <div class="container" style="height:50vh">
+                            <div class="row">
+                                <div class="col">
+                                    <h3>Dragon</h3>
+                                    <h2>Trunk</h2>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <p>Dragon’s trunk not only carries unpressurized cargo but also supports the spacecraft during ascent. One half of the trunk is covered in solar panels which provide power to Dragon during flight, and while on station.
+                                        The trunk remains attached to Dragon until shortly before reentry into Earth’s atmosphere.</p>
+                                    <table class="data mb-5">
+                                        <tbody>
+                                            <tr>
+                                                <td>VOLUME</td>
+                                                <td>37 m³ <span>/ 1300 ft³</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item {{changedImage}}">
+                    <div class="background-css {{classAdded}} flexing" id="carousel-img3">
+                        <div class="container" style="height:50vh">
+                            <div class="row">
+                                <div class="col">
+                                    <h3>Dragon</h3>
+                                    <h2>Capsule</h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="accordion" id="accordion-capsule">
+                                        <div class="accordion-buttons mt-3">
+                                            <button type="button" data-toggle="collapse" data-target="#capsule-collapse1" aria-expanded="true" aria-controls="capsule-collapse1" (click)="changeImg('img1')">
+                                            Overview
+                                        </button>
+                                            <button type="button" data-toggle="collapse" data-target="#capsule-collapse2" aria-expanded="false" aria-controls="capsule-collapse2" (click)="changeImg('img2')">
+                                            Launch Abort
+                                        </button>
+                                            <button type="button" data-toggle="collapse" data-target="#capsule-collapse3" aria-expanded="false" aria-controls="capsule-collapse3" (click)="changeImg('img3')">
+                                            Attitude control
+                                        </button>
+                                        </div>
+                                        <div id="capsule-collapse1" class="collapse show mt-3" data-parent="#accordion-capsule">
+                                            <p>
+                                                The Dragon capsule, also known as the pressurized section, allows for the transport of people as well as environmentally sensitive cargo. Dragon is equipped with Draco thrusters that allow Dragon to maneuver while on orbit, and 8 SuperDracos coupled together
+                                                as a Launch Escape System.
+                                            </p>
+                                            <table class="data mb-5">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>VOLUME</td>
+                                                        <td>9.3 m³ <span>/ 328 ft³</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div id="capsule-collapse2" class="collapse mt-3" data-parent="#accordion-capsule">
+                                            <p>The Launch Abort System is a crew safety system built into the Dragon spacecraft, used to quickly separate Dragon from Falcon 9 in the unlikely event of an emergency. The crew Dragon spacecraft will use its
+                                                SuperDraco engines during a launch abort scenario to propel both the capsule and its trunk away from the launch vehicle.
+                                            </p>
+                                            <table class="data mb-5">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>NUMBER OF ENGINES</td>
+                                                        <td>8</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ESCAPE THRUST</td>
+                                                        <td>71 kN <span>/ 16,000 lbf</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div id="capsule-collapse3" class="collapse mt-3" data-parent="#accordion-capsule">
+                                            <p>
+                                                The Dragon spacecraft is equipped with 16 Draco thrusters used to orient the spacecraft during the mission, including apogee/perigee maneuvers, orbit adjustment and attitude control. Each Draco thruster is capable of generating 90 pounds of force in the
+                                                vacuum of space.
+                                            </p>
+                                            <table class="data mb-5">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>NUMBER OF ENGINES</td>
+                                                        <td>16</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>THRUST IN VACUUM</td>
+                                                        <td>400N <span>/ 90 lbf</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#falconCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#falconCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="regular-wrapper" style="height:auto" inViewport [inViewportOptions]="{ threshold: 0 }" (inViewportAction)="viewPortCheck($event)">
+        <div id="video-img" class="background-css" style="position:relative;" (click)="videoPlay();">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64.025" height="81.486" viewBox="0 0 64.025 81.486" class="play-arrow">
+                <g>
+                    <path d="M8,5V86.486L72.025,45.743Z" transform="translate(-8 -5)" fill="#fff"></path>
+                </g>
+            </svg>
+        </div>
+    </div>
+    <div class="regular-wrapper" style="height:auto">
+        <div class="container d-md-none background-css" style="height:auto">
+            <div class="row justify-content-center justify-content-md-end pt-5">
+                <div class="col col-md-6 pt-5">
+                    <h2 style="text-align:left">
+                        Taking humans to space
+                    </h2>
+                    <p class="pt-2">
+                        In 2020, SpaceX will return America’s ability to fly NASA astronauts to space on American vehicles for the first time since 2011. In addition to carrying astronauts to space for NASA, SpaceX’s Dragon spacecraft can also carry private passengers to Earth
+                        orbit, the ISS or beyond.
+                    </p>
+                    <a class="btn-background-slide" routerLink="/human-spacefight">Learn more</a>
+                </div>
+            </div>
+        </div>
+        <div id="dragon-human-img" class="background-css flexing" style="align-items:flex-start">
+            <div class="container d-none d-md-block">
+                <div class="row justify-content-center justify-content-md-end pt-5">
+                    <div class="col col-md-6 pt-5">
+                        <h2 style="text-align:left">
+                            Taking humans to space
+                        </h2>
+                        <p class="pt-2">
+                            In 2020, SpaceX will return America’s ability to fly NASA astronauts to space on American vehicles for the first time since 2011. In addition to carrying astronauts to space for NASA, SpaceX’s Dragon spacecraft can also carry private passengers to Earth
+                            orbit, the ISS or beyond.
+                        </p>
+                        <a class="btn-background-slide" routerLink="/human-spacefight">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="regular-wrapper" style="height:auto" class="{{changedImage3}}">
+        <div id="engine-img" class="background-css flexing headers-left" style="position:relative;">
+            <div class="container" style="height:50vh">
+                <div class="row">
+                    <div class="col">
+                        <h3>Engines</h3>
+                        <h2>Draco</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="accordion" id="accordion-engines2">
+                            <div class="accordion-buttons mt-3">
+                                <button type="button" data-toggle="collapse" data-target="#engines2-collapse1" aria-expanded="true" aria-controls="engines2-collapse1" (click)="changeImg3('img1')">
+                                    Draco
+                                </button>
+                                <button type="button" data-toggle="collapse" data-target="#engines2-collapse2" aria-expanded="false" aria-controls="engines2-collapse2" (click)="changeImg3('img2')">
+                                    Superdraco
+                                </button>
+                            </div>
+                            <div id="engines2-collapse1" class="collapse show mt-3" data-parent="#accordion-engines2">
+                                <p>
+                                    The Dragon spacecraft is equipped with 16 Draco thrusters used to orient the spacecraft during the mission, including apogee/perigee maneuvers, orbit adjustment and attitude control. Each Draco thruster is capable of generating 90 pounds of force in the
+                                    vacuum of space.
+                                </p>
+                                <table class="data mb-5">
+                                    <tbody>
+                                        <tr>
+                                            <td>NUMBER OF ENGINES</td>
+                                            <td>16</td>
+                                        </tr>
+                                        <tr>
+                                            <td>THRUST IN VACUUM</td>
+                                            <td>400 N <span>/ 90 lbf</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="engines2-collapse2" class="collapse mt-3" data-parent="#accordion-engines2">
+                                <p>
+                                    An array of eight SuperDraco engines provides fault-tolerant propulsion for Dragon’s launch escape system. In the unlikely event of an emergency, the eight SuperDraco engines can power Dragon half a mile from the launch vehicle in less than 8 seconds
+                                </p>
+                                <table class="data mb-5">
+                                    <tbody>
+                                        <tr>
+                                            <td>NUMBER OF ENGINES</td>
+                                            <td>8</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ESCAPE THRUST</td>
+                                            <td>73 kN <span>/ 16,400 lbf</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="regular-wrapper background-css flexing headers-left">
+        <div class="container">
+            <div class="row">
+                <div class="col-5 flexing">
+                    <div>
+                        <h2>Dragon parachute system</h2>
+                        <p class="pt-2">
+                            The Dragon spacecraft is equipped with two drogue parachutes to stabilize the spacecraft following reentry and four main parachutes to further decelerate the spacecraft prior to landing.
+                        </p>
+                        <a class="btn-background-slide" (click)="videoPlay2()">Watch video</a>
+                    </div>
+                </div>
+                <div class="col-7" id="video-img2" (click)="videoPlay2()">
+
+                    <img width="100%" height="100%" src="https://www.spacex.com/static/images/dragon/parachute.webp" alt="">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64.025" height="81.486" viewBox="0 0 64.025 81.486" class="play-arrow">
+                        <g>
+                            <path d="M8,5V86.486L72.025,45.743Z" transform="translate(-8 -5)" fill="#fff"></path>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="regular-wrapper background-css">
+        <div id="falconHeavyCarousel2" class="carousel slide headers-left" data-ride="carousel" data-interval="false">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="background-css" id="carousel2-img1"></div>
+                    <div class="container description flexing">
+                        <div class="row" style="width:100%">
+                            <div class="col">
+                                <p>Cargo Dragon approaching the ISS</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="background-css" id="carousel2-img2"></div>
+                    <div class="container description flexing">
+                        <div class="row" style="width:100%">
+                            <div class="col">
+                                <p>Dragon approaching the ISS</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="background-css" id="carousel2-img3"></div>
+                    <div class="container description flexing">
+                        <div class="row" style="width:100%">
+                            <div class="col">
+                                <p>CRS-3 in orbit</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="background-css" id="carousel2-img4"></div>
+                    <div class="container description flexing">
+                        <div class="row" style="width:100%">
+                            <div class="col">
+                                <p>Dragon nearing the Space Station</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="background-css" id="carousel2-img5"></div>
+                    <div class="container description flexing">
+                        <div class="row" style="width:100%">
+                            <div class="col">
+                                <p>Crew Dragon returns safely from the International Space Station</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="background-css" id="carousel2-img6"></div>
+                    <div class="container description flexing">
+                        <div class="row" style="width:100%">
+                            <div class="col">
+                                <p>Dragon in seen against the Earth's atmosphere</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="background-css" id="carousel2-img7"></div>
+                    <div class="container description flexing">
+                        <div class="row" style="width:100%">
+                            <div class="col">
+                                <p>Dragon and Falcon 9 roll to the pad deck at pad 39A, Kennedy Space Center</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="background-css" id="carousel2-img8"></div>
+                    <div class="container description flexing">
+                        <div class="row" style="width:100%">
+                            <div class="col">
+                                <p>Dragon on Pad 39A at Kennedy Space Center</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="background-css" id="carousel2-img9"></div>
+                    <div class="container description flexing">
+                        <div class="row" style="width:100%">
+                            <div class="col">
+                                <p>CRS-10 attached to the ISS</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="background-css" id="carousel2-img10"></div>
+                    <div class="container description flexing">
+                        <div class="row" style="width:100%">
+                            <div class="col">
+                                <p>Dragon on pad 39A at Kennedy Space Center</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#falconHeavyCarousel2" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#falconHeavyCarousel2" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <div id="footer" style="margin-top: 10vh;">
+        <div class="container">
+            <div class="row mb-1">
+                <div class="col">
+                    <span>SpaceX © 2020</span>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8" style="  display: flex; justify-content:space-between">
+                    <a href="https://twitter.com/spacex" target="_blank" class="social">TWITTER</a>
+                    <a href="https://www.youtube.com/spacex" target="_blank" class="social">YOUTUBE</a>
+                    <a href="https://www.instagram.com/spacex/" target="_blank" class="social">INSTAGRAM</a>
+                    <a href="https://www.flickr.com/photos/spacex" target="_blank" class="social">FLICKR</a>
+                    <a href="https://www.linkedin.com/company/spacex" target="_blank" class="social">LINKEDIN</a>
+                    <a href="../../media/privacy_policy_spacex.pdf" target="_blank" class="social d-none d-lg-block">PRIVACY POLICY</a>
+                </div>
+            </div>
+            <div class="row justify-content-center d-lg-none">
+                <div class="col-md-8">
+                    <a href="../../media/privacy_policy_spacex.pdf" target="_blank" class="social">PRIVACY POLICY</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div class="my-modal {{addHidden}}">
+    <div class="modal-content" (click)="videoClose();">
+        <div class="container">
+            <span class="closeBtn">&times;</span>
+            <div class="row flexing" style="height:100vh;">
+                <div class="col-12">
+                    <div class="iframe-container">
+                        <iframe class="video" src="https://www.youtube.com/embed/78ATfCaBn6E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="my-modal {{addHidden2}}">
+    <div class="modal-content" (click)="videoClose2();">
+        <div class="container">
+            <span class="closeBtn">&times;</span>
+            <div class="row flexing" style="height:100vh;">
+                <div class="col-12">
+                    <div class="iframe-container">
+                        <iframe class="video" src="https://www.youtube.com/embed/ulVZds71CZQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

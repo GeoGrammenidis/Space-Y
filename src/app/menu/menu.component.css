@@ -1,0 +1,134 @@
+.my-navbar {
+    position: fixed;
+    top: 0px;
+    height: 60px;
+    width: 100%;
+    background-color: transparent;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+.menu-contents {
+    height: 60px;
+}
+
+.logo {
+    height: 18.75px;
+    width: 150px;
+    margin-top: 10px;
+    pointer-events: auto;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+.logo:focus,
+.logo:hover {
+    outline: none;
+}
+
+.hamburger div {
+    width: 20px;
+    height: 1px;
+    background-color: #fff;
+    margin: 6px 0;
+}
+
+.hamburger {
+    position: absolute;
+    right: 50px;
+    top: 15px;
+    background-color: transparent;
+    border: none;
+    pointer-events: auto;
+}
+
+.hamburger:focus {
+    outline: none;
+}
+
+.hamburger:hover div {
+    width: 21px;
+}
+
+@media screen and (min-width: 992px) {
+    .my-navbar {
+        height: 100px;
+    }
+    .menu-contents {
+        height: 100px;
+    }
+    .logo {
+        overflow: show;
+        height: 26.25px;
+        width: 210px;
+        margin-top: 32px;
+    }
+    .hamburger div {
+        width: 30px;
+        height: 3px;
+        margin: 6px 0;
+    }
+    .hamburger {
+        right: 50px;
+        top: 35px;
+    }
+    .hamburger:hover div {
+        width: 30px;
+        height: 4px;
+    }
+}
+
+.my-navbar ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-evenly;
+    margin: 0;
+    padding-left: 0;
+}
+
+.my-navbar li {
+    pointer-events: auto;
+}
+
+a {
+    position: relative;
+    font: 14px/28px DINPro-Bold, Arial, Verdana, sans-serif;
+    font-weight: 400;
+    font-weight: 500;
+    font-style: normal;
+    color: #fff;
+    -webkit-transition: color .25s ease;
+    transition: color .25s ease;
+}
+
+.my-navbar .fill-white {
+    fill: #fff;
+}
+
+table.custom-nav-links {
+    display: table;
+    width: 100%;
+    z-index: 101;
+}
+
+table.custom-nav-links td {
+    font: 16px/40px DINPro-Regular, Arial, Verdana, sans-serif;
+    text-align: right;
+    padding: 0;
+}
+
+table.custom-nav-links .my-nav-row:hover {
+    cursor: pointer;
+}
+
+table.custom-nav-links .my-nav-row:hover td {
+    color: #ccc;
+}
+
+table.custom-nav-links .my-nav-row:focus {
+    outline: 0;
+}

@@ -1,0 +1,533 @@
+<main>
+
+    <div id="parallax-wrapper">
+        <div class="container">
+            <div class="row justify-content-md-center" id="feature">
+                <div class="col-md">
+                    <h1>Falcon 9</h1>
+                    <h3>First Orbital Class Rocket capable of reflight</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="regular-wrapper flexing">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col" inViewport [inViewportOptions]="{ threshold: [0] }" (inViewportAction)="counting($event)">
+                    <span class="number">{{counter[0]}}</span>
+                </div>
+                <div class="col">
+                    <span class="number">{{counter[1]}}</span>
+                </div>
+                <div class="col">
+                    <span class="number">{{counter[2]}}</span>
+                </div>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col">
+                    <span class="stats">Total Launches</span>
+                </div>
+                <div class="col">
+                    <span class="stats">Total Landings</span>
+                </div>
+                <div class="col">
+                    <span class="stats">Reflown Rockets</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="regular-wrapper {{classAdded}} background-css flexing" id="falcon-lines">
+        <div class="container">
+            <div class="row justify-content-center justify-content-md-start">
+                <div class="col col-md-6">
+                    <h4 style="text-align:left">
+                        Falcon 9 is a reusable, two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of people and payloads into Earth orbit and beyond. Falcon 9 is the world’s first orbital class reusable rocket. Reusability allows SpaceX
+                        to refly the most expensive parts of the rocket, which in turn drives down the cost of space access.
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="regular-wrapper background-css {{classAdded}}" id="falcon" inViewport [inViewportOptions]="{ threshold: 0 }" (inViewportAction)="attaching($event)">
+        <div id="falconCarousel" class="carousel slide headers-left" data-ride="carousel" data-interval="false">
+            <div class="d-none d-md-block">
+                <ol class="carousel-indicators">
+                    <li data-target="#falconCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#falconCarousel" data-slide-to="1"></li>
+                    <li data-target="#falconCarousel" data-slide-to="2"></li>
+                    <li data-target="#falconCarousel" data-slide-to="3"></li>
+                    <li data-target="#falconCarousel" data-slide-to="4"></li>
+                </ol>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="background-css {{classAdded}} flexing" id="carousel-img1">
+                        <!-- Overview -->
+                        <div class="container" style="height:50vh">
+                            <div class="row">
+                                <div class="col">
+                                    <h3>Falcon 9</h3>
+                                    <h2>Overview</h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <table class="data mb-5">
+                                        <tbody>
+                                            <tr>
+                                                <td>HEIGHT</td>
+                                                <td>70 m <span>/ 229.6 ft</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>DIAMETER</td>
+                                                <td>3.7 m <span>/ 12 ft</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>MASS</td>
+                                                <td>549,054 kg <span>/ 1,207,920 lb</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>PAYLOAD TO LEO</td>
+                                                <td>22,800 kg <span>/ 50,265 lb</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>PAYLOAD TO GTO</td>
+                                                <td>8,300 kg <span>/ 18,300 lb</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>PAYLOAD TO MARS</td>
+                                                <td>4,020 kg <span>/ 8,860 lb</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item {{changedImage}}">
+                    <div class="background-css {{classAdded}} flexing" id="carousel-img2">
+                        <!-- First stage -->
+                        <div class="container" style="height:50vh">
+                            <div class="row">
+                                <div class="col">
+                                    <h3>Falcon 9</h3>
+                                    <h2>First stage</h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="accordion" id="accordion-engines">
+                                        <div class="accordion-buttons mt-3">
+                                            <button type="button" data-toggle="collapse" data-target="#engines-collapse1" aria-expanded="true" aria-controls="engines-collapse1" (click)="changeImg('img1')">
+                                                Overview
+                                            </button>
+                                            <button type="button" data-toggle="collapse" data-target="#engines-collapse2" aria-expanded="false" aria-controls="engines-collapse2" (click)="changeImg('img2')">
+                                                Engines
+                                            </button>
+                                            <button type="button" data-toggle="collapse" data-target="#engines-collapse3" aria-expanded="false" aria-controls="engines-collapse3" (click)="changeImg('img3')">
+                                                Landing legs
+                                            </button>
+                                        </div>
+                                        <div id="engines-collapse1" class="collapse show mt-3" data-parent="#accordion-engines">
+                                            <p>
+                                                Falcon 9’s first stage incorporates nine Merlin engines and aluminum-lithium alloy tanks containing liquid oxygen and rocket-grade kerosene (RP-1) propellant.
+                                            </p>
+                                            <p>
+                                                Falcon 9 generates more than 1.7 million pounds of thrust at sea level.
+                                            </p>
+                                        </div>
+                                        <div id="engines-collapse2" class="collapse mt-3" data-parent="#accordion-engines">
+                                            <p>The nine Merlin engines on the first stage are gradually throttled near the end of first-stage flight to limit launch vehicle acceleration as the rocket’s mass decreases with the burning of fuel. These engines
+                                                are also used to reorient the first stage prior to reentry and to decelerate the vehicle for landing.</p>
+                                        </div>
+                                        <div id="engines-collapse3" class="collapse mt-3" data-parent="#accordion-engines">
+                                            <p> The Falcon 9 first stage is equipped with four landing legs made of state-of-the-art carbon fiber with aluminum honeycomb.
+                                            </p>
+                                            <p>
+                                                Placed symmetrically around the base of the rocket, they are stowed at the base of the vehicle and deploy just prior to landing.
+                                            </p>
+                                            <p style="text-decoration: underline;"><strong>Learn more about SpaceX reusability</strong> </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="background-css {{classAdded}} flexing" id="carousel-img3">
+                        <!-- Second stage -->
+                        <div class="container" style="height:50vh">
+                            <div class="row">
+                                <div class="col">
+                                    <h3>Falcon 9</h3>
+                                    <h2>Second stage</h2>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <p>The second stage, powered by a single Merlin Vacuum Engine, delivers Falcon 9’s payload to the desired orbit. The second stage engine ignites a few seconds after stage separation, and can be restarted multiple times
+                                        to place multiple payloads into different orbits.
+                                    </p>
+                                    <table class="data mb-5">
+                                        <tbody>
+                                            <tr>
+                                                <td>NUMBER OF ENGINES</td>
+                                                <td>1 vacuum</td>
+                                            </tr>
+                                            <tr>
+                                                <td>BURN TIME</td>
+                                                <td>397 sec</td>
+                                            </tr>
+                                            <tr>
+                                                <td>THRUST</td>
+                                                <td>981 kN <span>/ 220,500 lbf</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="background-css {{classAdded}} flexing" id="carousel-img4">
+                        <!-- Interstage -->
+                        <div class="container" style="height:50vh">
+                            <div class="row">
+                                <div class="col">
+                                    <h3>Falcon 9</h3>
+                                    <h2>Interstage</h2>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <p>The interstage is a composite structure that connects the first and second stages, and houses the pneumatic pushers that allow the first and second stage to separate during flight.</p>
+                                    <h3>Grid fins</h3>
+                                    <p>Falcon 9 is equipped with four hypersonic grid fins positioned at the base of the interstage. They orient the rocket during reentry by moving the center of pressure.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item {{changedImage2}}">
+                    <div class="background-css {{classAdded}} flexing" id="carousel-img5">
+                        <!-- Payload -->
+                        <div class="container" style="height:50vh">
+                            <div class="row">
+                                <div class="col">
+                                    <h3>Falcon 9</h3>
+                                    <h2>Payload</h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="accordion" id="accordion-payloads">
+                                        <div class="accordion-buttons mt-3">
+                                            <button type="button" data-toggle="collapse" data-target="#payload-collapse1" aria-expanded="true" aria-controls="payload-collapse1" (click)="changeImg2('img1')">
+                                                Fairing
+                                            </button>
+                                            <button type="button" data-toggle="collapse" data-target="#payload-collapse2" aria-expanded="false" aria-controls="payload-collapse2" (click)="changeImg2('img2')">
+                                                Dragon
+                                            </button>
+                                        </div>
+                                        <div id="payload-collapse1" class="collapse show mt-3" data-parent="#accordion-payloads">
+                                            <p>
+                                                Made of a carbon composite material, the fairing protects satellites on their way to orbit. The fairing is jettisoned approximately 3 minutes into flight, and SpaceX continues to recover fairings for reuse on future missions.
+                                            </p>
+                                            <table class="data mb-5">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>HEIGHT</td>
+                                                        <td>13.1 m <span>/ 43 ft</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>DIAMETER</td>
+                                                        <td>5.2 m <span>/ 17.1 ft</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div id="payload-collapse2" class="collapse mt-3" data-parent="#accordion-payloads">
+                                            <p>Dragon is capable of carrying up to 7 people and/or cargo in the spacecraft’s pressurized section. In addition, Dragon can carry cargo in the spacecraft’s unpressurized trunk, which can also accommodate secondary
+                                                payloads.
+                                            </p>
+                                            <p style="text-decoration: underline;"><strong>Learn more about Dragon</strong></p>
+                                            <table class="data mb-5">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>HEIGHT</td>
+                                                        <td>8.1 m <span>/ 26.6 ft</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>DIAMETER</td>
+                                                        <td>3.7 m <span>/ 12 ft</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#falconCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#falconCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="regular-wrapper" style="height:auto" inViewport [inViewportOptions]="{ threshold: 0 }" (inViewportAction)="viewPortCheck($event)">
+        <div id="video-img" class="background-css" style="position:relative;" (click)="videoPlay();">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64.025" height="81.486" viewBox="0 0 64.025 81.486" class="play-arrow">
+                <g>
+                    <path d="M8,5V86.486L72.025,45.743Z" transform="translate(-8 -5)" fill="#fff"></path>
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <div class="regular-wrapper" style="height:auto" class="{{changedImage3}}">
+        <div id="engine-img" class="background-css flexing headers-left" style="position:relative;">
+            <div class="container" style="height:50vh">
+                <div class="row">
+                    <div class="col">
+                        <h3>Engines</h3>
+                        <h2>Merlin</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="accordion" id="accordion-engines2">
+                            <div class="accordion-buttons mt-3">
+                                <button type="button" data-toggle="collapse" data-target="#engines2-collapse1" aria-expanded="true" aria-controls="engines2-collapse1" (click)="changeImg3('img1')">
+                                    Sea level
+                                </button>
+                                <button type="button" data-toggle="collapse" data-target="#engines2-collapse2" aria-expanded="false" aria-controls="engines2-collapse2" (click)="changeImg3('img2')">
+                                    Vaccum
+                                </button>
+                            </div>
+                            <div id="engines2-collapse1" class="collapse show mt-3" data-parent="#accordion-engines2">
+                                <p>
+                                    Merlin is a family of rocket engines developed by SpaceX for use on its Falcon 1, Falcon 9 and Falcon Heavy launch vehicles. Merlin engines use a rocket grade kerosene (RP-1) and liquid oxygen as rocket propellants in a gas-generator power cycle. The
+                                    Merlin engine was originally designed for recovery and reuse.
+                                </p>
+                                <table class="data mb-5">
+                                    <tbody>
+                                        <tr>
+                                            <td>PROPELLANT</td>
+                                            <td>LOX <span>/ RP-1</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>THRUST</td>
+                                            <td>845 kN <span>/ 190,000 lbf</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="engines2-collapse2" class="collapse mt-3" data-parent="#accordion-engines2">
+                                <p>Merlin Vacuum features a larger exhaust section and a significantly larger expansion nozzle to maximize the engine’s efficiency in the vacuum of space. Its combustion chamber is regeneratively cooled, while the expansion
+                                    nozzle is radiatively cooled. At full power, the Merlin Vacuum engine operates with the greatest efficiency ever for an American-made hydrocarbon rocket engine.</p>
+                                <table class="data mb-5">
+                                    <tbody>
+                                        <tr>
+                                            <td>PROPELLANT</td>
+                                            <td>LOX <span>/ RP-1</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>THRUST</td>
+                                            <td>981 kN <span>/ 220,500 lbf</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="regular-wrapper background-css">
+        <div id="falconCarousel2" class="carousel slide headers-left" data-ride="carousel" data-interval="false">
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="background-css" id="carousel2-img1"></div>
+                    <div class="container description flexing">
+                        <div class="row" style="width:100%">
+                            <div class="col">
+                                <p>Falcon 9 first and second stages after separating in flight</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="background-css" id="carousel2-img2"></div>
+                    <div class="container description flexing">
+                        <div class="row" style="width:100%">
+                            <div class="col">
+                                <p>Falcon 9 lefts off with its Iridium-5 payload</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="background-css" id="carousel2-img3"></div>
+                    <div class="container description flexing">
+                        <div class="row" style="width:100%">
+                            <div class="col">
+                                <p>Falcon 9 lands on the droneship Just Read the Instructions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="background-css" id="carousel2-img4"></div>
+                    <div class="container description flexing">
+                        <div class="row" style="width:100%">
+                            <div class="col">
+                                <p>Close-up on the Merlin engines of Falcon 9 during liftoff</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="background-css" id="carousel2-img5"></div>
+                    <div class="container description flexing">
+                        <div class="row" style="width:100%">
+                            <div class="col">
+                                <p>Falcon 9 leaves a trail of light as it lifts off the Vandenberg</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="background-css" id="carousel2-img6"></div>
+                    <div class="container description flexing">
+                        <div class="row" style="width:100%">
+                            <div class="col">
+                                <p>Falcon 9 lifts off with Dragon for an in-flight test of the Crew Dragon abort system</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="background-css" id="carousel2-img7"></div>
+                    <div class="container description flexing">
+                        <div class="row" style="width:100%">
+                            <div class="col">
+                                <p>Falcon 9 lifts off with its Iridium-8 payloads</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="background-css" id="carousel2-img8"></div>
+                    <div class="container description flexing">
+                        <div class="row" style="width:100%">
+                            <div class="col">
+                                <p>Falcon 9 with its Radarsat payload at sunset before launch</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="background-css" id="carousel2-img9"></div>
+                    <div class="container description flexing">
+                        <div class="row" style="width:100%">
+                            <div class="col">
+                                <p>Falcon 9 lands at Cape Canaveral</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="background-css" id="carousel2-img10"></div>
+                    <div class="container description flexing">
+                        <div class="row" style="width:100%">
+                            <div class="col">
+                                <p>Falcon 9 vertical with its Iridium payload at moonrise</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#falconCarousel2" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#falconCarousel2" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <div id="pre-footer" class="regular-wrapper" style="margin-top:10vh">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <p>For information about our launch services, contact <a class="normal" href="mailto:sales@spacex.com">sales@spacex.com</a></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-md-right text-center">
+                    <a href="https://www.spacex.com/media/falcon_users_guide_042020.pdf" class="btn-background-slide" target="_blank">Download user's guide</a>
+                </div>
+                <div class="col-md-6 text-md-left text-center">
+                    <a href="https://www.spacex.com/media/Capabilities&Services.pdf" class="btn-background-slide" target="_blank">Capabilities and services</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="container">
+            <div class="row mb-1">
+                <div class="col">
+                    <span>SpaceX © 2020</span>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8" style="  display: flex; justify-content:space-between">
+                    <a href="https://twitter.com/spacex" target="_blank" class="social">TWITTER</a>
+                    <a href="https://www.youtube.com/spacex" target="_blank" class="social">YOUTUBE</a>
+                    <a href="https://www.instagram.com/spacex/" target="_blank" class="social">INSTAGRAM</a>
+                    <a href="https://www.flickr.com/photos/spacex" target="_blank" class="social">FLICKR</a>
+                    <a href="https://www.linkedin.com/company/spacex" target="_blank" class="social">LINKEDIN</a>
+                    <a href="../../media/privacy_policy_spacex.pdf" target="_blank" class="social d-none d-lg-block">PRIVACY POLICY</a>
+                </div>
+            </div>
+            <div class="row justify-content-center d-lg-none">
+                <div class="col-md-8">
+                    <a href="../../media/privacy_policy_spacex.pdf" target="_blank" class="social">PRIVACY POLICY</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<div class="my-modal {{addHidden}}">
+    <div class="modal-content" (click)="videoClose();">
+        <div class="container">
+            <span class="closeBtn">&times;</span>
+            <div class="row flexing" style="height:100vh;">
+                <div class="col-12">
+                    <div class="iframe-container">
+                        <iframe class="video" src="https://www.youtube.com/embed/Z4TXCZG_NEY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
